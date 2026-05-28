@@ -1,213 +1,538 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>애니 매니아 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cream-bg: #fdfdfa;
-      --charcoal-fg: #1c1a17;
-      --gold-accent: #c29d6d;
-      --hairline-color: #e6e3db;
-      --serif-font: 'Nanum Myeongjo', serif;
-      --sans-font: 'Outfit', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-raw-concrete">
+    
+    <title>판교 쇼핑몰 제작 업체 | 판교 테크밸리에서 날카로운 커머스 구축하기</title>
+    <meta name="description" content="판교 쇼핑몰 제작 업체를 찾나요? 번지르르한 미사여구 없이, 진짜 팔리는 쇼핑몰을 만듭니다. 판교 테크밸리 기반으로 웹 디자인과 개발을 동시에 해결하세요.">
+    <meta name="keywords" content="판교 쇼핑몰 제작, 판교 웹개발, 판교 쇼핑몰 업체, 판교 이커머스, 판교 웹사이트 제작, 판교 디자인">
+    <link rel="canonical" href="https://kr-pbn-bp-006.pages.dev">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kr-pbn-bp-006.pages.dev">
+    <meta property="og:title" content="판교 쇼핑몰 제작: 구조적 미학과 매출의 결합">
+    <meta property="og:description" content="판교의 스타트업과 브랜드를 위한 거침없는 웹 제작. 클릭을 부르는 디자인, 로직을 지킨 개발.">
+    <meta property="og:image" content="https://placehold.co/1200x630/1a1a1a/ff6b35?text=PANGYO+MALL">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="판교 쇼핑몰 제작: 판교에서 가장 거친 개발자">
+    <meta name="twitter:description" content="판교 쇼핑몰 제작 업체. 예쁜 척하지 않습니다. 팔리는 구조를 만듭니다.">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "판교 웹 스튜디오 (Pangyo Web Studio)",
+      "image": "https://kr-pbn-bp-006.pages.dev/logo.png",
+      "@id": "https://kr-pbn-bp-006.pages.dev",
+      "url": "https://kr-pbn-bp-006.pages.dev",
+      "telephone": "+82-10-6279-0862",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "분당구 대왕판교로",
+        "addressLocality": "성남시",
+        "addressRegion": "경기도",
+        "postalCode": "13494",
+        "addressCountry": "KR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.3924,
+        "longitude": 127.1115
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "priceRange": "$$",
+      "description": "판교 테크밸리 기반의 쇼핑몰 제작 및 웹 개발 전문 에이전시."
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--cream-bg);
-      color: var(--charcoal-fg);
-      font-family: var(--sans-font);
-      line-height: 1.8;
-      padding: 0 40px;
-    }
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 32px;
-      margin-bottom: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .brand {
-      font-family: var(--serif-font);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-    nav { display: flex; gap: 32px; }
-    nav a {
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: var(--gold-accent); }
-    main { padding-bottom: 80px; }
-    .kicker {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-accent);
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-family: var(--serif-font);
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-      color: var(--charcoal-fg);
-      margin-bottom: 40px;
-    }
-    .story-body {
-      font-family: var(--serif-font);
-      font-size: 1.15rem;
-      color: var(--charcoal-fg);
-      font-weight: 400;
-      text-align: justify;
-      margin-bottom: 60px;
-    }
-    .story-body p { margin-bottom: 24px; text-indent: 12px; }
-    .juice-link {
-      color: var(--gold-accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold-accent);
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
-    .juice-link:hover {
-      color: var(--charcoal-fg);
-      border-bottom-color: var(--charcoal-fg);
-    }
-    .editorials {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 60px;
-    }
-    .editorial-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold-accent);
-      margin-bottom: 40px;
-    }
-    .editorial-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-    .editorial-block {
-      text-decoration: none;
-      color: var(--charcoal-fg);
-      display: block;
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 30px;
-    }
-    .editorial-block:hover h3 { color: var(--gold-accent); }
-    .editorial-block h3 {
-      font-family: var(--serif-font);
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      transition: color 0.3s ease;
-    }
-    .editorial-block p {
-      font-size: 0.95rem;
-      color: #555555;
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 40px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: #888888;
-    }
-    footer a { color: #888888; text-decoration: none; }
-    footer a:hover { color: var(--gold-accent); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 16px; }
-      h1 { font-size: 2rem; }
-      .story-body { font-size: 1.05rem; }
-    }
-  </style>
+    </script>
+
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #e5e5e5;
+            --accent: #ff6b35;
+            --white: #ffffff;
+            --border-width: 4px;
+            --font-main: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --font-mono: "Courier New", Courier, monospace;
+            --space-gap: 48px;
+            --padding-main: 72px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--secondary);
+            color: var(--primary);
+            line-height: 1.5;
+            overflow-x: hidden;
+            border: var(--border-width) solid var(--primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            filter: grayscale(100%) contrast(1.2);
+            border: var(--border-width) solid var(--primary);
+        }
+
+        img:hover {
+            filter: grayscale(0%) contrast(1);
+            transform: scale(1.02);
+            transition: all 0.2s ease;
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4 {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            line-height: 0.95;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 8rem);
+            word-break: keep-all;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 5rem);
+            margin-bottom: var(--space-gap);
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            max-width: 65ch;
+        }
+
+        .mono {
+            font-family: var(--font-mono);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        /* LAYOUT UTILS */
+        .container {
+            width: 100%;
+            padding: 0 var(--padding-main);
+        }
+
+        .section {
+            padding: var(--padding-main) 0;
+            border-bottom: var(--border-width) solid var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--space-gap);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            border: var(--border-width) solid var(--primary);
+            cursor: pointer;
+            transition: all 0.1s;
+            box-shadow: 8px 8px 0px var(--accent);
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+            box-shadow: 4px 4px 0px var(--primary);
+            transform: translate(4px, 4px);
+        }
+
+        /* HEADER */
+        header {
+            background: var(--white);
+            border-bottom: var(--border-width) solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem var(--padding-main);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            transform: skew(-10deg);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-decoration-color: var(--accent);
+        }
+
+        /* MOBILE MENU */
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: calc(var(--padding-main) * 2) var(--padding-main);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-accent {
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 300px;
+            height: 300px;
+            background-color: var(--accent);
+            z-index: 1;
+            border: var(--border-width) solid var(--white);
+            transform: rotate(15deg);
+            opacity: 0.8;
+        }
+
+        /* PROCESS SECTION */
+        .process-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border: var(--border-width) solid var(--primary);
+            box-shadow: 12px 12px 0px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* UGC REVIEWS */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem;
+            border: var(--border-width) solid var(--white);
+            position: relative;
+        }
+
+        .review-card::after {
+            content: """;
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 8rem;
+            color: var(--accent);
+            font-family: serif;
+            line-height: 0;
+        }
+
+        .stars {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .review-meta {
+            margin-top: 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            border-top: 2px solid var(--accent);
+            padding-top: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* CONTACT / CTA */
+        .contact-section {
+            background: var(--accent);
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            margin-bottom: 1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: var(--padding-main);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            :root {
+                --padding-main: 24px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                border-bottom: var(--border-width) solid var(--primary);
+                padding: 2rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .hero-accent {
+                width: 150px;
+                height: 150px;
+                top: 10%;
+                right: -20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+
     <header>
-      <a href="/" class="brand">EDITORIAL.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="kicker">BOUTIQUE KR / SELECTION ACCENT</div>
-      <h1>애니 매니아 지식 저널 및 아카이브</h1>
-      <div class="story-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>애니 매니아</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="editorials">
-        <div class="editorial-label">Recent Editorial Articles</div>
-        <div class="editorial-flow">
-          
-        <a href="posts/normal-1.html" class="editorial-block">
-          <h3>90년대 셀 애니메이션 작화의 한계와 이와 관련된 아날로그 특수 효과의 역사</h3>
-          <p>90년대 셀 애니메이션 제작 시 빛이 뿌옇게 흐려지거나 번지는 몽환적인 효과를 내기 위해 투명 셀판 아래에 부드러운 백라이트를 대고 조리개를 조절해 이중 노출로 촬영하던 촬영 스튜...</p>
-        </a>
-      
-
-        <a href="posts/normal-2.html" class="editorial-block">
-          <h3>판타지 애니 설정 속 북유럽 세계수(Yggdrasil) 전승의 변형 패턴 고찰</h3>
-          <p>수많은 이세계 판타지 만화와 애니메이션에서 세계관의 핵심 축으로 등장하는 세계수 위그드라실 전승은 현대 서브컬처에 이르러 단순한 물리적 나무가 아닌 가상 데이터 그리드나 다차원 통...</p>
-        </a>
-      
-
-        <a href="posts/normal-3.html" class="editorial-block">
-          <h3>전설적인 애니메이터들의 타이밍 미학: 리미티드 3코마 작화법의 운동학</h3>
-          <p>디즈니의 풀 애니메이션(초당 24장)에 대비되는 동양 리미티드 애니메이션의 정수인 3코마 작화법(초당 8장 기법)은 프레임의 부족함을 독창적인 프레임 홀드 타이밍과 과장된 정지 컷...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="editorial-block">
-          <h3>애니 작화 마니아들이 강력히 추천하는 강남 셔츠룸 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="editorial-block">
-          <h3>애니 작화 마니아들이 강력히 추천하는 강남 셔츠룸 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
+        <div class="nav-wrapper">
+            <a href="#" class="logo">PANGYO_DEV_01</a>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#process">Process</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:010-6279-0862" style="color: var(--accent);">010-6279-0862</a>
+            </nav>
         </div>
-      </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-accent"></div>
+            <div class="container hero-content">
+                <div class="mono" style="color: var(--accent); margin-bottom: 1rem;">// Terrific Web Solution</div>
+                <h1>판교 쇼핑몰 제작<br>업체는<br>논리대로 움직인다.</h1>
+                <p style="background: var(--white); color: var(--primary); display: inline-block; padding: 0.5rem; margin-top: 2rem; border: var(--border-width) solid var(--accent); transform: rotate(-2deg);">
+                    판교 테크밸리의 코드와 디자인, 그 중간 지점에서 우리는 일합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- ABOUT / INTRO -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: 1fr 1fr; align-items: center;">
+                    <div>
+                        <h2>예쁜 척은 그만.<br>팔리는 게 답이다.</h2>
+                        <p>안녕하세요. 판교에서 쇼핑몰 제작을 하고 있는 개발자입니다. 여기저기 "감성적인", "감동적인" 디자인 타령하는 곳 많죠? 솔직히 지칩니다.</p>
+                        <p>우리는 <strong>판교 쇼핑몰 제작 업체</strong>로서 데이터와 UX가 먼저입니다. 로딩 속도가 1 초 느려지면 이탈률이 얼마나 오르는지, 버튼 색상이 구매 전환에 어떤 영향을 미치는지 계산합니다.</p>
+                        <p>판교의 스타트업들, 그리고 성공적인 커머스를 꿈꾸는 분들을 위해 <strong>지저분한 코드는 없애고, 명쾌한 구조</strong>를 남깁니다.</p>
+                    </div>
+                    <div style="background: var(--primary); padding: 2rem; border: var(--border-width) solid var(--accent); color: var(--white);">
+                        <h3 style="color: var(--accent);">[핵심 역량]</h3>
+                        <ul style="list-style: square; padding-left: 1.5rem; line-height: 2;">
+                            <li>초고속 반응형 쇼핑몰 구축</li>
+                            <li>판교 특화 B2B/B2C 디자인 최적화</li>
+                            <li>SEO 기반의 구조적 마크업</li>
+                            <li>불필요한 애니메이션 제거</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section id="process" class="section" style="background: var(--white);">
+            <div class="container">
+                <h2 style="text-align: center;">프로세스 (Process)</h2>
+                <div class="grid process-grid">
+                    <div class="card">
+                        <div class="card-icon">01</div>
+                        <h3>Analysis</h3>
+                        <p>판교 비즈니스 환경을 분석합니다. 타겟이 누구인지, 경쟁사는 어떤 UI 를 쓰는지 뼈대를 세웁니다.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">02</div>
+                        <h3>Wireframe</h3>
+                        <p>색칠하기 전에 뼈대를 그립니다. 사용자가 어떻게 움직일지 시뮬레이션합니다. 여기가 가장 중요합니다.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">03</div>
+                        <h3>Development</h3>
+                        <p>클린 코드로 개발합니다. 유지보수가 쉽고, 검색 엔진이 좋아하는 코드를 짭니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UGC REVIEWS -->
+        <section id="reviews" class="section">
+            <div class="container">
+                <h2>Real Talk from Clients</h2>
+                <div class="review-grid">
+                    <article class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"판교 쇼핑몰 제작 업체 찾다가 연락했는데, 디자인 설명보다 매출 구조 설명을 먼저 해줘서 놀랐습니다. 결과물도 딱 제가 원했던 깔끔한 스타일."</p>
+                        <div class="review-meta">
+                            <span>Nick: sells-master</span>
+                            <span>Date: 2023.10.12</span>
+                        </div>
+                    </article>
+                    <article class="review-card">
+                        <div class="stars">★★★★☆</div>
+                        <p>"의사소통이 빠릅니다. 판교에 사무실이 있어서 미팅도 편했고, 개발 속도가 상상을 초월하네요. 추천합니다."</p>
+                        <div class="review-meta">
+                            <span>Nick: startup-ceo</span>
+                            <span>Date: 2023.11.05</span>
+                        </div>
+                    </article>
+                    <article class="review-card">
+                        <div class="stars">★★★★★</div>
+                        <p>"모바일 반응형이 진짜 잘 됩니다. 고객들이 폰으로 주문하기 편해졌다고 하네요. 판교 쇼핑몰 제작은 여기가 정답."</p>
+                        <div class="review-meta">
+                            <span>Nick: fashion-brand</span>
+                            <span>Date: 2024.01.20</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2>Project Start?</h2>
+                <p style="margin: 0 auto 2rem auto; font-weight: 700; font-size: 1.5rem;">망설이지 말고 인프라를 구축하세요.</p>
+                <a href="tel:010-6279-0862" class="btn" style="background: var(--primary); color: var(--white);">010-6279-0862 전화하기</a>
+            </div>
+        </section>
     </main>
+
     <footer>
-      <div>&copy; 2026 EDITORIAL.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
+        <div>
+            <p style="margin-bottom: 0.5rem; font-weight: 900;">PANGYO WEB STUDIO</p>
+            <p>경기도 성남시 분당구 대왕판교로 (판교 테크밸리)</p>
+            <p>Tel: 010-6279-0862</p>
+        </div>
+        <div style="text-align: right;">
+            <p>&copy; 2024 Pangyo Mall Developer.</p>
+            <p style="color: var(--accent); margin-top: 0.5rem;">Designed by Geek.</p>
+        </div>
     </footer>
-  </div>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

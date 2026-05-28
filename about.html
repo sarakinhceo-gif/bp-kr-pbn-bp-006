@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-raw-concrete">
+    <title>정보 | 판교 쇼핑몰 제작, 우리가 다 해결합니다</title>
+    <meta name="description" content="판교 쇼핑몰 제작 업체를 찾나요? 번지르르한 미사여구 없이, 진짜 팔리는 쇼핑몰을 만듭니다. 판교 테크밸리 기반으로 웹 디자인과 개발을 동시에 해결하세요.">
+    <meta name="keywords" content="판교 쇼핑몰 제작, 판교 웹개발, 판교 쇼핑몰 업체, 판교 이커머스, 판교 웹사이트 제작, 판교 디자인">
+    <link rel="canonical" href="https://kr-pbn-bp-006.pages.dev">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kr-pbn-bp-006.pages.dev">
+    <meta property="og:title" content="정보 | 판교 쇼핑몰 제작 업체">
+    <meta property="og:description" content="판교 쇼핑몰 제작 업체를 찾나요? 번지르르한 미사여구 없이, 진짜 팔리는 쇼핑몰을 만듭니다.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/333/fff?text=GEEK+MALL">
+    
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --bg-color: #f2f2f0;
+            --text-color: #111111;
+            --accent-color: #3355ff;
+            --border-color: #111111;
+            --card-bg: #ffffff;
+            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'Courier New', Courier, monospace;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --border-width: 2px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border: var(--border-width) solid var(--border-color);
+            box-shadow: 4px 4px 0px var(--border-color);
+            transition: all 0.2s ease;
+        }
+
+        img:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--border-color);
+        }
+
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4 {
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--spacing-md);
+            border-bottom: var(--border-width) solid var(--border-color);
+            display: inline-block;
+            padding-bottom: var(--spacing-xs);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-sm);
+            max-width: 65ch;
+        }
+
+        .mono {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* LAYOUT UTILS */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        .section {
+            padding: var(--spacing-lg) 0;
+            border-bottom: var(--border-width) solid var(--border-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* COMPONENTS */
+        .btn {
+            display: inline-block;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            padding: 1rem 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: var(--border-width) solid var(--text-color);
+            box-shadow: 4px 4px 0px var(--border-color);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--border-color);
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: var(--border-width) solid var(--border-color);
+            padding: var(--spacing-md);
+            box-shadow: 4px 4px 0px var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-header {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            margin-bottom: var(--spacing-xs);
+            display: block;
+        }
+
+        /* NAV */
+        nav {
+            border-bottom: var(--border-width) solid var(--border-color);
+            padding: var(--spacing-sm) 0;
+            background: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: -0.1em;
+        }
+
+        .desktop-menu {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .desktop-menu {
+                display: flex;
+                gap: var(--spacing-md);
+            }
+            .hamburger-menu {
+                display: none;
+            }
+        }
+
+        .hamburger-menu {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .tel-link {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* FAQ STYLE */
+        .faq-item {
+            border: var(--border-width) solid var(--border-color);
+            margin-bottom: var(--spacing-sm);
+            background: var(--card-bg);
+        }
+        .faq-q {
+            padding: var(--spacing-sm);
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-a {
+            padding: 0 var(--spacing-sm) var(--spacing-sm);
+            display: none; /* Simple toggle logic would go here with JS, keeping static for HTML */
+            display: block; /* Showing content for SEO/Static */
+            border-top: 1px solid #ccc;
+            margin-top: var(--spacing-sm);
+            padding-top: var(--spacing-sm);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="container nav-inner">
+            <a href="#" class="logo">GEEK_MALL_PANGYO</a>
+            <div class="desktop-menu mono">
+                <a href="#">홈</a>
+                <a href="#">제작 프로세스</a>
+                <a href="#">포트폴리오</a>
+                <a href="#">정보</a>
+                <a href="tel:031-XXX-XXXX" class="tel-link">031-XXX-XXXX</a>
+            </div>
+            <div class="hamburger-menu">MENU [+]</div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="section">
+        <div class="container">
+            <span class="mono" style="color: var(--accent-color);">// INFO & DATA</span>
+            <h1>판교 쇼핑몰 제작,<br>기술로 승부합니다.</h1>
+            <p class="mono" style="margin-bottom: var(--spacing-md);">
+                LOCATION: PANGYO TECH VALLEY<br>
+                STATUS: OPEN FOR BUSINESS
+            </p>
+            <div class="grid">
+                <div>
+                    <p>안녕하세요. 판교 테크밸리 한복판에서 코드를 짭니다. 예쁜 디자인? 당연히 기본이죠. 하지만 쇼핑몰의 본질은 '판매'입니다. 로딩 속도, SEO 최적화, 구매 전환율. 이 숫자들이 올라가야 진짜 잘 만든 사이트입니다.</p>
+                    <p>우리 동네 스타트업 founders 들이 왜 저를 찾는지 아시나요? 말 줄이고 일 끝내니까요.</p>
+                </div>
+                <div style="align-self: center;">
+                    <a href="#contact" class="btn">무료 견적 받기 →</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CORE VALUES -->
+    <section class="section">
+        <div class="container">
+            <h2>왜 판교 쇼핑몰 제작 업체로<br>우리를 선택해야 할까?</h2>
+            <div class="grid grid-3">
+                <!-- Card 1 -->
+                <article class="card">
+                    <span class="card-header">01. SPEED_OPTIMIZATION</span>
+                    <h3>0.1 초의 차이</h3>
+                    <p>고객은 기다려주지 않습니다. 1 초 지연되면 이탈률 7% 증가. 불필요한 애니메이션 걷어내고, 핵심 코드만 남겼습니다. 판교의 빠른 호흡에 맞는 속도입니다.</p>
+                </article>
+                <!-- Card 2 -->
+                <article class="card">
+                    <span class="card-header">02. SEO_CORE</span>
+                    <h3>검색엔진 즐겨찾기</h3>
+                    <p>만들고 끝이 아닙니다. 네이버, 구글이 좋아하던 구조로 짭니다. 메타태그부터 스키마 마크업까지. "판교 쇼핑몰 제작" 검색했을 때 상단 노출, 우리가 노립니다.</p>
+                </article>
+                <!-- Card 3 -->
+                <article class="card">
+                    <span class="card-header">03. LOCAL_SUPPORT</span>
+                    <h3>동네 개발자</h3>
+                    <p>_remote_ 로 일하면 커뮤니케이션 비용이 듭니다. 판교, 분당, 성남 지역은 직접 만나서 회의 가능합니다. 커피 한 잔 값으로 프로젝트 방향 잡으세요.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFOGRAPHIC / PROCESS -->
+    <section class="section">
+        <div class="container">
+            <div class="grid">
+                <div>
+                    <img src="https://via.placeholder.com/600x400/333/fff?text=PROCESS+DIAGRAM" alt="쇼핑몰 제작 프로세스 다이어그램">
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <span class="mono" style="margin-bottom: 1rem;">// WORKFLOW</span>
+                    <h2>복잡한 건 싫어,<br>단계는 간단하게.</h2>
+                    <ul style="margin-top: var(--spacing-md);">
+                        <li style="border-left: 4px solid var(--text-color); padding-left: 1rem; margin-bottom: 1.5rem;">
+                            <strong>01. 분석 (Analysis)</strong><br>
+                            타겟 오디언스가 누구고, 뭐 팔 건지부터 뜯어봅니다.
+                        </li>
+                        <li style="border-left: 4px solid var(--text-color); padding-left: 1rem; margin-bottom: 1.5rem;">
+                            <strong>02. 설계 (Architecture)</strong><br>
+                            UX/UI 와 DB 구조를 동시에 설계합니다. 튼튼한 뼈대가 중요하죠.
+                        </li>
+                        <li style="border-left: 4px solid var(--text-color); padding-left: 1rem; margin-bottom: 1.5rem;">
+                            <strong>03. 개발 (Development)</strong><br>
+                            클린 코드로 빌드합니다. 유지보수 쉬운 구조로요.
+                        </li>
+                        <li style="border-left: 4px solid var(--text-color); padding-left: 1rem;">
+                            <strong>04. 런칭 & 마케팅 (Launch)</strong><br>
+                            오픈 후 광고 세팅과 데이터 분석까지 밀어줍니다.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section">
+        <div class="container">
+            <h2>자주 묻는 질문 (FAQ)</h2>
+            <p style="margin-bottom: var(--spacing-md);">고객들이 가장 궁금해하는 것들, 가식 없이 답합니다.</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-q">Q. 판교 쇼핑몰 제작 비용은 얼마인가요?</div>
+                    <div class="faq-a">
+                        A. "얼마입니까?"라고 물으시면 "상황에 따라 다릅니다"라고 답할 수밖에 없습니다. 템플릿 수정인지, 커스텀 개발인지, 기능 규모에 따라 천차만별입니다. 다만, 예산을 먼저 말씀해 주시면 그 범위 내에서 최적의 솔루션을 제안해 드립니다.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q. 제작 기간은 얼마나 걸리나요?</div>
+                    <div class="faq-a">
+                        A. 평균적으로 4 주에서 8 주 사이입니다. 단순한 브랜드 사이트면 2 주면 가능하고, 대형 이커머스 기능 (결제, 재고 연동 등) 이 포함되면 2 달 이상 잡습니다. 급하다면 MVP(최소 기능 제품) 버전으로 먼저 오픈하는 전략도 있습니다.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">Q. 유지보수는 어떻게 하나요?</div>
+                    <div class="faq-a">
+                        A. 오픈 후 1 개월은 무상 A/S 기간입니다. 그 이후는 유지보수 계약을 체결하거나, 건별 수리로 진행합니다. 서버 문제, 보안 업데이트 등 기술적인 부분은 저희가 다 맡아서 여러분은 영업에만 집중하세요.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / FOOTER -->
+    <footer class="section" id="contact" style="background-color: #111; color: #fff; border-bottom: none;">
+        <div class="container">
+            <div class="grid">
+                <div>
+                    <h2 style="border-color: #fff; color: #fff;">프로젝트 시작하기</h2>
+                    <p style="color: #ccc;">
+                        판교 쇼핑몰 제작, 고민만 하지 마세요.<br>
+                        지금 바로 연락주시면, 30 분 안에初步 견적과 타임라인을 드립니다.
+                    </p>
+                    <a href="tel:031-XXX-XXXX" class="btn" style="background: #fff; color: #111; border-color: #fff; margin-top: 1rem;">전화 상담하기</a>
+                    <a href="mailto:hello@geekmall.kr" class="btn" style="background: transparent; color: #fff; border-color: #fff; margin-top: 1rem; margin-left: 0.5rem;">이메일 보내기</a>
+                </div>
+                <div style="font-family: var(--
+</body>
+</html>
